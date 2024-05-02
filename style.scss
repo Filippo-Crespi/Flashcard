@@ -1,0 +1,114 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import "reset";
+
+$primary: #0b1957;
+$background: #fff;
+$text-on-bg: #f7e9de;
+$font: "Montserrat", sans-serif;
+
+@mixin verticalFlex($gap) {
+  display: flex;
+  flex-direction: column;
+  gap: $gap;
+}
+
+@mixin horizontalFlex($gap) {
+  display: flex;
+  flex-direction: row;
+  gap: $gap;
+}
+
+@mixin button {
+  padding: 1rem 2rem;
+  border-radius: 16px;
+  background-color: $primary;
+  color: $text-on-bg;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+* {
+  font-family: $font;
+}
+
+body {
+  padding: 2rem;
+  font-family: $font;
+  background-color: $background;
+  color: $primary;
+}
+
+.hide {
+  display: none;
+}
+
+.cards-container {
+  @include horizontalFlex(0);
+  justify-content: space-around;
+}
+
+.create-card {
+  text-align: center;
+  margin-bottom: 2rem;
+  button {
+    @include button();
+  }
+}
+
+.card {
+  background-color: $background;
+  width: 40%;
+  padding: 1.5rem;
+  border: 1px solid;
+  border-radius: 12px;
+  @include verticalFlex(1rem);
+  .card-text {
+    @include verticalFlex(1rem);
+    span {
+      background-color: rgb(229, 226, 226);
+      padding: 0.5rem;
+    }
+  }
+  .btn-container {
+    @include horizontalFlex(0.5rem);
+    justify-content: flex-end;
+    button {
+      padding: 0.7rem;
+      background-color: $primary;
+      color: $text-on-bg;
+      cursor: pointer;
+      border-radius: 100%;
+      i {
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+.card-creation-modal {
+  @include verticalFlex(3rem);
+  align-items: center;
+  justify-content: center;
+  border: 1px solid $primary;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding: 5rem;
+  transform: translate(-50%, -50%);
+  border-radius: 16px;
+  #create-flashcard-btn {
+    @include button();
+  }
+  .field-box {
+    @include verticalFlex(0);
+    align-items: center;
+    justify-content: center;
+    .field {
+      @include verticalFlex(0);
+    }
+  }
+  .title {
+    font-size: 2rem;
+    text-align: center;
+  }
+}

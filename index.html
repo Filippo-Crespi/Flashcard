@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Flashcards</title>
+  </head>
+  <body>
+    <div class="create-card hide">
+      <button type="button" id="create-btn">
+        <i class="fa-solid fa-plus"></i>
+        <span>Create Flashcard</span>
+      </button>
+    </div>
+    <div class="cards-container hide">
+      <div class="card" id="card-1">
+        <div class="card-text">
+          <span class="question"></span>
+          <span class="answer"></span>
+        </div>
+        <div class="btn-container">
+          <button class="showHideAnswer">
+            <i class="fa-solid fa-eye"></i>
+          </button>
+          <button class="delete">
+            <i class="fa-solid fa-trash"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-creation-modal">
+      <h1 class="title"><i class="fa-solid fa-plus"></i>New Flashcard</h1>
+      <div class="field-box">
+        <div class="field">
+          <label for="question">Question:</label>
+          <textarea id="question" rows="3"></textarea>
+        </div>
+        <div class="field">
+          <label for="answer">Answer:</label>
+          <textarea id="answer" rows="3"></textarea>
+        </div>
+      </div>
+      <button id="create-flashcard-btn">Create Flashcard</button>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
