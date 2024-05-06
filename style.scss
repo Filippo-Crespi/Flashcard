@@ -38,13 +38,14 @@ body {
   color: $primary;
 }
 
-.hide {
-  display: none;
+.hide{
+  visibility: hidden;
 }
 
 .cards-container {
   @include horizontalFlex(0);
   justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 .create-card {
@@ -57,7 +58,6 @@ body {
 
 .card {
   background-color: $background;
-  width: 40%;
   padding: 1.5rem;
   border: 1px solid;
   border-radius: 12px;
